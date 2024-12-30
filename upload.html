@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Upload</title>
+  <link rel="stylesheet" href="upload.css">
+</head>
+<body>
+  <!-- Back Button -->
+  <div class="back-button-container">
+    <a href="home.html" class="back-button">← Back</a>
+  </div>
+
+  <!-- Upload Form Section -->
+  <section class="upload-section">
+    <h1>Upload Your Image</h1>
+    <div class="upload-form-container">
+      <div class="upload-form">
+        <form id="uploadForm">
+          <label for="name">Your Name</label>
+          <input type="text" id="name" name="name" required>
+
+          <label for="email">Email ID</label>
+          <input type="email" id="email" name="email" required>
+
+          <label for="imageName">Image Title</label>
+          <input type="text" id="imageName" name="imageName" required>
+
+          <label for="image">Upload Image</label>
+          <input type="file" id="image" name="image" accept="image/*" required>
+
+          <button type="submit" class="upload-btn" id="uploadbtn"  >Upload</button>
+        </form>
+      </div>
+
+      <!-- Preview Column (second column for image preview) -->
+      <div class="preview-column">
+        <h3>Image Preview</h3>
+        <div id="previewImageContainer" style="display: none;">
+          <img id="previewImage" src="" alt="Preview Image" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script src="upload.js"></script>
+</body>
+</html>

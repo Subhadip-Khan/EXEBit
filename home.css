@@ -1,0 +1,275 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body and Background */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f8f8f8;
+}
+
+/* Navigation Bar */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #4e54c8;
+    color: #fff;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+nav .logo img {
+    height: 60px;
+    /* Adjust based on your logo size */
+}
+
+/* Hamburger Menu Styles */
+nav .hamburger-menu {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+nav .hamburger-menu .bar {
+    width: 25px;
+    height: 3px;
+    background-color: #fff;
+    margin: 4px 0;
+    transition: 0.1s;
+}
+
+/* When the menu is active, change to cross */
+nav .hamburger-menu.active .bar:nth-child(1) {
+    transform: rotate(405deg);
+    position: relative;
+    top: 8px;
+}
+
+nav .hamburger-menu.active .bar:nth-child(2) {
+    opacity: 0;
+}
+
+nav .hamburger-menu.active .bar:nth-child(3) {
+    transform: rotate(-405deg);
+    position: relative;
+    top: -8px;
+}
+
+/* Navigation Menu */
+nav .nav-menu {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+nav .nav-menu li {
+    text-transform: uppercase;
+}
+
+nav .nav-menu a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+nav .nav-menu a:hover {
+    color: #8f94fb;
+}
+
+/* Hero Section */
+.hero {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60vh;
+    background-color: #4e54c8;
+    color: #fff;
+    position: relative;
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 4rem;
+    margin-bottom: 10px;
+}
+
+.hero p {
+    font-size: 1.5rem;
+}
+
+/* First Wave Divider */
+.wave-divider {
+    position: absolute;
+    bottom: -1px;
+    width: 100%;
+    height: 200px;
+    /* Increased height for a thicker wave */
+    background-color: #8f94fb;
+    /* First wave color */
+    clip-path: polygon(100% 0%, 100% 100%, 0% 100%, 0% 70%, 25% 90%, 50% 80%, 75% 90%, 100% 70%);
+    animation: wave-animation-1 4s ease-in-out infinite;
+}
+
+/* Second Wave Divider (staggered effect) */
+.wave-divider-2 {
+    position: absolute;
+    bottom: -1px;
+    width: 100%;
+    height: 200px;
+    background-color: #3b40a3;
+    /* Darker shade for the second wave */
+    clip-path: polygon(100% 0%,
+        100% 100%,
+        0% 100%,
+        0% 70%,
+        25% 90%,
+        50% 80%,
+        75% 90%,
+        100% 70%);
+    animation: wave-animation-2 4s ease-in-out infinite;
+    animation-delay: 2s;
+    /* Staggered start */
+}
+
+/* Animation for First Wave */
+@keyframes wave-animation-1 {
+    0% {
+        clip-path: polygon(100% 0%, 100% 100%, 0% 100%, 0% 70%, 25% 90%, 50% 80%, 75% 90%, 100% 70%);
+    }
+
+    50% {
+        clip-path: polygon(100% 0%, 100% 100%, 0% 100%, 0% 50%, 25% 70%, 50% 60%, 75% 70%, 100% 50%);
+    }
+
+    100% {
+        clip-path: polygon(100% 0%, 100% 100%, 0% 100%, 0% 70%, 25% 90%, 50% 80%, 75% 90%, 100% 70%);
+    }
+}
+
+/* Animation for Second Wave (staggered) */
+@keyframes wave-animation-2 {
+    0% {
+        clip-path: polygon(100% 0%, 100% 100%, 0% 100%, 0% 80%, 50% 100%, 100% 50%);
+    }
+
+    50% {
+        clip-path: polygon(100% 0%, 100% 100%, 0% 100%, 0% 60%, 50% 100%, 100% 40%);
+    }
+
+    100% {
+        clip-path: polygon(100% 0%, 100% 100%, 0% 100%, 0% 80%, 50% 100%, 100% 50%);
+    }
+}
+
+.logo-section {
+    background-color: #ffffff;
+    /* Same background color */
+    height: 25vh;
+    /* Occupy the remaining 20% of viewport height */
+    display: flex;
+    justify-content: flex-end;
+    /* Align logo to the right */
+    align-items: center;
+    padding-right: 20px;
+}
+
+.logo {
+    width: 200px;
+    /* Adjust size of the logo */
+    height: auto;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    nav {
+        flex-direction: row;
+    }
+
+    nav .hamburger-menu {
+        display: flex;
+    }
+
+    nav .nav-menu {
+        display: none;
+        flex-direction: column;
+        gap: 10px;
+        position: absolute;
+        top: 100%;
+        right: 0;
+        background-color: #4e54c8;
+        padding: 20px;
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    nav .nav-menu.active {
+        display: flex;
+    }
+}
+
+.uploaded-images {
+  padding: 20px;
+  text-align: center;
+}
+
+.uploaded-images h1 {
+  margin-bottom: 20px;
+  font-size: 2rem;
+  color: #4e54c8;
+}
+
+.image-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.image-grid .image-box {
+  position: relative;
+  width: calc(33.333% - 20px);
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  background: #ddd;
+  cursor: pointer;
+  border-radius: 8px;
+}
+
+.image-grid .image-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.image-grid .image-box .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  border-radius: 8px;
+}
+
+.image-grid .image-box:hover .overlay {
+  opacity: 1;
+}
+
+.image-grid .image-box .overlay h3,
+.image-grid .image-box .overlay p {
+  margin: 0;
+}

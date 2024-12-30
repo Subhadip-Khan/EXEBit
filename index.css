@@ -1,0 +1,105 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background: linear-gradient(to right, #4e54c8, #8f94fb);
+    color: white;
+    text-align: center;
+}
+
+.hero-content {
+    max-width: 600px;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    margin-bottom: 0.5rem;
+}
+
+.hero p {
+    font-size: 1.25rem;
+    margin-bottom: 1.5rem;
+}
+
+.hero button {
+    display: inline-flex;
+    align-items: center;
+    padding: 10px 20px;
+    font-size: 1rem;
+    color: #4e54c8;
+    background-color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.hero button:hover {
+    background-color: #f1f1f1;
+}
+
+.hero button svg {
+    margin-left: 8px;
+    width: 16px;
+    height: 16px;
+    fill: #4e54c8;
+    transition: transform 0.3s;
+}
+
+.hero button:hover svg {
+    transform: translateX(4px);
+}
+
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+}
+.hero-content label {
+    display: inline-flex;
+    align-items: center;
+    font-size: 1rem;
+    color: white;
+    margin-top: 1rem;
+    cursor: pointer;
+}
+
+.hero-content input[type="checkbox"] {
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border: 2px solid white;
+    border-radius: 4px;
+    margin-right: 8px;
+    background-color: transparent;
+    cursor: pointer;
+    transition: background-color 0.3s, border-color 0.3s;
+}
+
+.hero-content input[type="checkbox"]:checked {
+    background-color: white;
+    border-color: white;
+    position: relative;
+}
+
+.hero-content input[type="checkbox"]:checked::after {
+    content: '';
+    position: absolute;
+    top: 3px;
+    left: 7px;
+    width: 4px;
+    height: 9px;
+    border: solid #4e54c8;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+}
